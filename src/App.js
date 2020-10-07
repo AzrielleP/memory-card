@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import Card from './components/card/Card';
+import Score from './components/score/Score';
 
-function App() {
+export default function App() {
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+  const [answer, setAnswer] = useState([]);
+  const [data, setData] = useState(['red', 'blue', 'green']);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <main>
+      <Score scoreData = {score} bestScoreData = {bestScore} />
+    </main>
 
-export default App;
+  )
+
+
+} 
